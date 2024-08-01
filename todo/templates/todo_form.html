@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block title %}Todo List{% endblock %}
+
+{% block content %}
+    <h1 class="my-4">{{ form.instance.pk|yesno:"Edit Todo,Add Todo" }}</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <br>
+        <button class="btn btn-primary" type="submit">Save</button>
+    </form>
+    <br>
+    <a class="btn btn-secondary" href="{% url 'todo_list' %}">Back to List</a>
+{% endblock %}

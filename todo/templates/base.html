@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}My Project{% endblock %}</title>
+    <!-- Bootstrap CSS -->
+    {%load static%}
+    <link rel="stylesheet" href="{% static 'css/bmin.css' %}">
+    {% block extra_css %}{% endblock %}
+</head>
+<body>
+    {% block content %}
+
+    {% endblock %}
+    <!-- Bootstrap JS and dependencies -->
+    <script src="{% static 'js/p.js' %}"></script>
+    <script src="{% static 'js/bmin.js' %}"></script>
+    {% block extra_js %}{% endblock %}
+</body>
+</html>
